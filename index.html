@@ -1,251 +1,541 @@
-html = """<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Metacraft — Squads sob demanda, prontas para performar</title>
-  <meta name="description" content="Metacraft: squads de tecnologia sob demanda, treinadas exatamente na stack e no ambiente do cliente. Alta performance desde o primeiro dia, com continuidade garantida.">
-  <meta name="theme-color" content="#0E2336">
-  <meta property="og:title" content="Metacraft — Squads sob demanda, prontas para performar">
-  <meta property="og:description" content="Times já treinados na sua stack, entregando desde o primeiro dia.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:image" content="assets/logo.png">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <style>
-    :root{
-      --navy:#0E2336;
-      --orange:#D55A2A;
-      --ink:#1c1f24;
-      --muted:#6b7280;
-      --bg:#f8fafc;
-      --card:#ffffff;
-      --ring:#e5e7eb;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;color:var(--ink);background:var(--bg);}
-    a{color:var(--orange);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1120px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--ring);z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .nav .brand{display:flex;gap:12px;align-items:center}
-    .brand img{height:100px;width:auto}
-    .brand .title{font-weight:800;letter-spacing:.3px;color:var(--navy)}
-    .nav a.btn{background:var(--orange);color:#fff;padding:10px 16px;border-radius:10px;font-weight:600}
-    .hero{background:linear-gradient(180deg,#0E2336 0%, #14334f 60%, #0E2336 100%);color:#fff;padding:80px 0}
-    .hero h1{font-size:42px;line-height:1.1;margin:0 0 10px}
-    .hero p{max-width:760px;color:#e5e7eb;font-size:18px;margin:0 0 24px}
-    .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;background:var(--orange);color:#fff;padding:14px 18px;border-radius:12px;font-weight:700}
-    .btn.sec{background:#fff;color:var(--navy);border:1px solid var(--ring)}
-    section{padding:64px 0}
-    h2{font-size:28px;margin:0 0 12px;color:var(--navy)}
-    .grid{display:grid;gap:18px}
-    .grid.cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .card{background:var(--card);border:1px solid var(--ring);border-radius:16px;padding:20px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
-    .badge{display:inline-block;background:#edf2f7;color:var(--navy);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
-    ul{padding-left:18px;margin:10px 0}
-    .muted{color:var(--muted)}
-    .split{display:grid;gap:28px;grid-template-columns:1.2fr 1fr;align-items:center}
-    @media (max-width:900px){.split{grid-template-columns:1fr} .hero h1{font-size:36px}}
-    footer{border-top:1px solid var(--ring);background:#fff;padding:28px 0;color:var(--muted);font-size:14px}
-    .pill{display:inline-flex;gap:10px;align-items:center;background:#0E23360f;border:1px dashed #0E233633;padding:8px 12px;border-radius:999px;color:#0E2336}
-    .list{display:grid;gap:10px}
-    .list .item{display:flex;gap:10px}
-    .kpis{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:10px}
-    .k .n{font-weight:800;font-size:22px;color:var(--navy)}
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Metacraft",
-    "url": "https://www.metacraftbr.com",
-    "logo": "logo.png",
-    "sameAs": ["https://www.linkedin.com/company/metacraft"],
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+55-11-92159-5494",
-      "contactType": "sales",
-      "areaServed": "BR"
-    }]
-  }
-  </script>
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <img src="logo2.png" alt="Logo Metacraft" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Metacraft — Squads sob demanda, prontas para performar</title>
+    <meta
+      name="description"
+      content="Metacraft: squads de tecnologia sob demanda, treinadas exatamente na stack e no ambiente do cliente. Alta performance desde o primeiro dia, com continuidade garantida."
+    />
+    <meta name="theme-color" content="#0E2336" />
+    <meta
+      property="og:title"
+      content="Metacraft — Squads sob demanda, prontas para performar"
+    />
+    <meta
+      property="og:description"
+      content="Times já treinados na sua stack, entregando desde o primeiro dia."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:assets" content="assets/logo2.png" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <style>
+      :root {
+        --navy: #0e2336;
+        --orange: #d55a2a;
+        --ink: #1c1f24;
+        --muted: #6b7280;
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --ring: #e5e7eb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          "Helvetica Neue", Arial, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      a {
+        color: var(--orange);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: saturate(180%) blur(12px);
+        border-bottom: 1px solid var(--ring);
+        z-index: 10;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+      }
+      .nav .brand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .brand img {
+        height: 100px;
+        width: auto;
+      }
+      .brand .title {
+        font-weight: 800;
+        letter-spacing: 0.3px;
+        color: var(--navy);
+      }
+      .nav a.btn {
+        background: var(--orange);
+        color: #fff;
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      .hero {
+        background: linear-gradient(
+          180deg,
+          #0e2336 0%,
+          #14334f 60%,
+          #0e2336 100%
+        );
+        color: #fff;
+        padding: 80px 0;
+      }
+      .hero h1 {
+        font-size: 42px;
+        line-height: 1.1;
+        margin: 0 0 10px;
+      }
+      .hero p {
+        max-width: 760px;
+        color: #e5e7eb;
+        font-size: 18px;
+        margin: 0 0 24px;
+      }
+      .hero .cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        background: var(--orange);
+        color: #fff;
+        padding: 14px 18px;
+        border-radius: 12px;
+        font-weight: 700;
+      }
+      .btn.sec {
+        background: #fff;
+        color: var(--navy);
+        border: 1px solid var(--ring);
+      }
+      section {
+        padding: 64px 0;
+      }
+      h2 {
+        font-size: 28px;
+        margin: 0 0 12px;
+        color: var(--navy);
+      }
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+      .grid.cards {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--ring);
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04);
+      }
+      .badge {
+        display: inline-block;
+        background: #edf2f7;
+        color: var(--navy);
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      ul {
+        padding-left: 18px;
+        margin: 10px 0;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .split {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+      }
+      @media (max-width: 900px) {
+        .split {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 36px;
+        }
+      }
+      footer {
+        border-top: 1px solid var(--ring);
+        background: #fff;
+        padding: 28px 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .pill {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        background: #0e23360f;
+        border: 1px dashed #0e233633;
+        padding: 8px 12px;
+        border-radius: 999px;
+        color: #0e2336;
+      }
+      .list {
+        display: grid;
+        gap: 10px;
+      }
+      .list .item {
+        display: flex;
+        gap: 10px;
+      }
+      .kpis {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        margin-top: 10px;
+      }
+      .k .n {
+        font-weight: 800;
+        font-size: 22px;
+        color: var(--navy);
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Metacraft",
+        "url": "https://www.metacraftbr.com",
+        <img src="assets/logo2.png" alt="Logo Metacraft">
+        "sameAs": ["https://www.linkedin.com/company/metacraft"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+55-11-92159-5494",
+            "contactType": "sales",
+            "areaServed": "BR"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+        <div class="container nav">
+            <div class="brand">
+                <img src="assets/logo2.png" alt="Logo Metacraft" />
+            </div>
+            <div>
+                <a class="btn" href="#contato">Fale conosco</a>
+            </div>
+        </div>
+    </header>
 
-      </div>
-      <div>
-        <a class="btn" href="#contato">Fale conosco</a>
-      </div>
-    </div>
-  </header>
 
-  <section class="hero">
-    <div class="container">
-      <span class="badge">Consultoria em TI</span>
-      <h1>Squads sob demanda,<br>treinadas na sua stack.</h1>
-      <p>Formamos equipes que chegam prontas para performar no seu ambiente e tecnologias, com mecanismos contra rotatividade para manter a continuidade e a qualidade do projeto.</p>
-      <div class="cta">
-        <a class="btn" href="https://wa.me/5511921595494" target="_blank" rel="noopener">Whatsapp Comercial</a>
-        <a class="btn sec" href="#servicos">Ver serviços</a>
-      </div>
-      <div style="margin-top:16px">
-        <span class="pill">Brasil (11) e atendimento internacional</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="manifesto">
-    <div class="container split">
-      <div>
-        <h2>Manifesto</h2>
-        <p>Na Metacraft, tecnologia é um acelerador de negócio. Contratar e treinar equipes pode ser caro e demorado — por isso criamos um modelo diferente: <strong>squads sob demanda</strong>, formadas por desenvolvedores treinados <strong>exatamente</strong> na stack e no ambiente do cliente.</p>
-        <p>Antes de iniciar, nossos times passam por capacitação dedicada em ambientes <em>espelhados</em>, reduzindo gaps de conhecimento e eliminando a curva acentuada de aprendizado. Aliado a mecanismos contra rotatividade, garantimos entregas consistentes desde o primeiro dia.</p>
-        <div class="kpis">
-          <div class="card"><div class="n">Alta performance</div><div class="muted">desde o início</div></div>
-          <div class="card"><div class="n">Continuidade</div><div class="muted">mecanismos anti-rotatividade</div></div>
-          <div class="card"><div class="n">Custo-efetivo</div><div class="muted">time júnior + liderança sênior</div></div>
+    <section class="hero">
+      <div class="container">
+        <span class="badge">Um novo conceito de squads</span>
+        <h1>Squads sob demanda,<br />treinadas na sua stack</h1>
+        <p>
+          Formamos equipes que chegam prontas para performar no seu ambiente e
+          tecnologias, com mecanismos contra rotatividade para manter a
+          continuidade e a qualidade do projeto.
+        </p>
+        <div class="cta">
+          <a
+            class="btn"
+            href="https://wa.me/5511921595494"
+            target="_blank"
+            rel="noopener"
+            >Whatsapp Comercial</a
+          >
+          <a class="btn sec" href="#servicos">Ver serviços</a>
+        </div>
+        <div style="margin-top: 16px">
+          <span class="pill">Brasil (11) e atendimento internacional</span>
         </div>
       </div>
-      <div class="card">
-        <h3 style="margin-top:0;color:var(--navy)">Identidade</h3>
-        <div class="list">
-          <div class="item"><strong>Missão:</strong> Acelerar projetos com squads sob demanda, treinadas na stack do cliente, com menor custo e risco.</div>
-          <div class="item"><strong>Visão:</strong> Ser referência no Brasil e expandir para o mercado internacional até 2027.</div>
-          <div class="item"><strong>Proposta de valor:</strong> Times prontos para performar desde o primeiro dia, com continuidade garantida.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="servicos">
-    <div class="container">
-      <h2>Serviços</h2>
-      <p class="muted">Linha principal e soluções complementares para acelerar sua entrega.</p>
-      <div class="grid cards">
+    <section id="manifesto">
+      <div class="container split">
+        <div>
+          <h2>Sobre a Metacraft</h2>
+          <p>
+            Na Metacraft, tecnologia é um acelerador de negócio. Contratar e
+            treinar equipes pode ser caro e demorado — por isso criamos um
+            modelo diferente: <strong>squads sob demanda</strong>, formadas por
+            desenvolvedores treinados <strong>exatamente</strong> na stack e no
+            ambiente do cliente.
+          </p>
+          <p>
+            Antes de iniciar, nossos times passam por capacitação dedicada em
+            ambientes <em>espelhados</em>, reduzindo gaps de conhecimento e
+            eliminando a curva acentuada de aprendizado. Aliado a mecanismos
+            contra rotatividade, garantimos entregas consistentes desde o
+            primeiro dia.
+          </p>
+          <div class="kpis">
+            <div class="card">
+              <div class="n">Alta performance</div>
+              <div class="muted">desde o início</div>
+            </div>
+            <div class="card">
+              <div class="n">Continuidade</div>
+              <div class="muted">mecanismos anti-rotatividade</div>
+            </div>
+            <div class="card">
+              <div class="n">Custo-efetivo</div>
+              <div class="muted">time júnior + liderança sênior</div>
+            </div>
+          </div>
+        </div>
         <div class="card">
-          <h3>Squad Completa (Premium)</h3>
+          <h3 style="margin-top: 0; color: var(--navy)"></h3>
+          <div class="list">
+            <div class="item">
+              <strong>Missão:</strong> Acelerar projetos com squads sob demanda,
+              treinadas na stack do cliente, com menor custo e risco.
+            </div>
+            <div class="item">
+              <strong>Visão:</strong> Ser referência no Brasil e expandir para o
+              mercado internacional até 2027.
+            </div>
+            <div class="item">
+              <strong>Proposta de valor:</strong> Times prontos para performar
+              desde o primeiro dia, com continuidade garantida.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <h2>Serviços</h2>
+        <p class="muted">
+          Linha principal e soluções complementares para acelerar sua entrega.
+        </p>
+        <div class="grid cards">
+          <div class="card">
+            <h3>Squad Completa (Premium)</h3>
+            <ul>
+              <li>1 Tech Lead Sênior + 4–6 devs júnior/pleno</li>
+              <li>Treinados no seu ambiente e tecnologias</li>
+              <li>Supervisão técnica contínua</li>
+              <li>Ideal para projetos de médio e grande porte</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Mini Squad (Célula Enxuta)</h3>
+            <ul>
+              <li>1 Líder Técnico + 2–3 devs</li>
+              <li>Entrada mais acessível e escalável</li>
+              <li>Validação rápida de iniciativas</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Alocação Individual</h3>
+            <ul>
+              <li>Dev júnior/pleno/SR já adaptado à sua stack</li>
+              <li>Supervisão Metacraft</li>
+              <li>Reforço imediato para sua equipe</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Projetos Personalizados</h3>
+            <ul>
+              <li>Web e Mobile</li>
+              <li>Integrações e Arquitetura</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Cloud & DevOps</h3>
+            <ul>
+              <li>Migração AWS/Azure/GCP</li>
+              <li>CI/CD e Observabilidade</li>
+              <li>Otimização de custos</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Automação de Atendimento</h3>
+            <ul>
+              <li>Chatbots e WhatsApp Business</li>
+              <li>Fluxos inteligentes e IA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais">
+      <div class="container">
+        <h2>Por que a Metacraft?</h2>
+        <div class="grid cards">
+          <div class="card">
+            <strong>Treinados na sua stack</strong>
+            <p>Ambientes espelhados e capacitação dedicada antes do início.</p>
+          </div>
+          <div class="card">
+            <strong>Continuidade garantida</strong>
+            <p>Mecanismos contra rotatividade mantêm performance do time.</p>
+          </div>
+          <div class="card">
+            <strong>Flexibilidade</strong>
+            <p>De 1 dev a squads completas, conforme sua demanda.</p>
+          </div>
+          <div class="card">
+            <strong>Foco em ROI</strong>
+            <p>Velocidade de implantação e custo-efetividade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="processo">
+      <div class="container">
+        <h2>Como funciona</h2>
+        <div class="grid cards">
+          <div class="card">
+            <strong>1. Diagnóstico</strong>
+            <p>Entendemos seus objetivos e restrições.</p>
+          </div>
+          <div class="card">
+            <strong>2. Treinamento dedicado</strong>
+            <p>Time preparado no seu ambiente e tecnologias.</p>
+          </div>
+          <div class="card">
+            <strong>3. Kick-off</strong>
+            <p>Sprint 0 + planos de entrega e comunicação.</p>
+          </div>
+          <div class="card">
+            <strong>4. Operação e evolução</strong>
+            <p>Entregas contínuas com supervisão técnica.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container split">
+        <div>
+          <h2>Fale conosco</h2>
+          <p>
+            Vamos acelerar seu projeto? Entre em contato por WhatsApp ou e-mail.
+          </p>
           <ul>
-            <li>1 Tech Lead Sênior + 4–6 devs júnior/pleno</li>
-            <li>Treinados no seu ambiente e tecnologias</li>
-            <li>Supervisão técnica contínua</li>
-            <li>Ideal para projetos de médio e grande porte</li>
+            <li>
+              WhatsApp/Telefone:
+              <a
+                href="https://wa.me/5511921595494"
+                target="_blank"
+                rel="noopener"
+                >+55 (11) 92159-5494</a
+              >
+            </li>
+            <li>
+              E-mail:
+              <a href="mailto:contato@metacraftbr.com"
+                >contato@metacraftbr.com</a
+              >
+            </li>
           </ul>
+          <p class="muted">
+            Endereço comercial: Alameda Jaú, 1177, Jardim Paulista, São Paulo, SP 
+          </p>
         </div>
         <div class="card">
-          <h3>Mini Squad (Célula Enxuta)</h3>
-          <ul>
-            <li>1 Líder Técnico + 2–3 devs</li>
-            <li>Entrada mais acessível e escalável</li>
-            <li>Validação rápida de iniciativas</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Alocação Individual</h3>
-          <ul>
-            <li>Dev júnior/pleno já adaptado à sua stack</li>
-            <li>Supervisão Metacraft</li>
-            <li>Reforço imediato para sua equipe</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Projetos Personalizados</h3>
-          <ul>
-            <li>Web e Mobile</li>
-            <li>Integrações e Arquitetura</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Cloud & DevOps</h3>
-          <ul>
-            <li>Migração AWS/Azure/GCP</li>
-            <li>CI/CD e Observabilidade</li>
-            <li>Otimização de custos</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Automação de Atendimento</h3>
-          <ul>
-            <li>Chatbots e WhatsApp Business</li>
-            <li>Fluxos inteligentes e IA</li>
-          </ul>
+          <form action="https://formspree.io/f/mayvlqzn" method="POST">
+            <label
+              >Nome<br /><input
+                required
+                name="name"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid var(--ring);
+                  border-radius: 10px;
+                  margin-top: 6px;
+                " /></label
+            ><br /><br />
+            <label
+              >E-mail<br /><input
+                required
+                type="email"
+                name="email"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid var(--ring);
+                  border-radius: 10px;
+                  margin-top: 6px;
+                " /></label
+            ><br /><br />
+            <label
+              >Mensagem<br /><textarea
+                required
+                name="message"
+                rows="5"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid var(--ring);
+                  border-radius: 10px;
+                  margin-top: 6px;
+                "
+              ></textarea></label
+            ><br /><br />
+            <button class="btn" type="submit">Enviar</button>
+            <p class="muted" style="margin-top: 8px">
+
+            </p>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="diferenciais">
-    <div class="container">
-      <h2>Por que a Metacraft?</h2>
-      <div class="grid cards">
-        <div class="card">
-          <strong>Treinados na sua stack</strong>
-          <p>Ambientes espelhados e capacitação dedicada antes do início.</p>
+    <footer>
+      <div
+        class="container"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          flex-wrap: wrap;
+        "
+      >
+        <div>
+          © <span id="y"></span> Metacraft — squads sob demanda, prontas para
+          performar.
         </div>
-        <div class="card">
-          <strong>Continuidade garantida</strong>
-          <p>Mecanismos contra rotatividade mantêm performance do time.</p>
-        </div>
-        <div class="card">
-          <strong>Flexibilidade</strong>
-          <p>De 1 dev a squads completas, conforme sua demanda.</p>
-        </div>
-        <div class="card">
-          <strong>Foco em ROI</strong>
-          <p>Velocidade de implantação e custo-efetividade.</p>
+        <div>
+          <a href="#manifesto">Manifesto</a> ·
+          <a href="#servicos">Serviços</a> · <a href="#contato">Contato</a>
         </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <section id="processo">
-    <div class="container">
-      <h2>Como funciona</h2>
-      <div class="grid cards">
-        <div class="card"><strong>1. Diagnóstico</strong><p>Entendemos seus objetivos e restrições.</p></div>
-        <div class="card"><strong>2. Treinamento dedicado</strong><p>Time preparado no seu ambiente e tecnologias.</p></div>
-        <div class="card"><strong>3. Kick-off</strong><p>Sprint 0 + planos de entrega e comunicação.</p></div>
-        <div class="card"><strong>4. Operação e evolução</strong><p>Entregas contínuas com supervisão técnica.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contato">
-    <div class="container split">
-      <div>
-        <h2>Fale conosco</h2>
-        <p>Vamos acelerar seu projeto? Entre em contato por WhatsApp ou e-mail.</p>
-        <ul>
-          <li>WhatsApp/Telefone: <a href="https://wa.me/5511921595494" target="_blank" rel="noopener">+55 (11) 92159-5494</a></li>
-          <li>E-mail: <a href="mailto:contato@metacraftbr.com">contato@metacraftbr.com</a></li>
-        </ul>
-        <p class="muted">Endereço comercial: São Paulo, SP — atendimento internacional disponível.</p>
-      </div>
-      <div class="card">
-        <form action="https://formspree.io/f/mayvlqzn" method="POST">
-          <label>Nome<br><input required name="name" style="width:100%;padding:10px;border:1px solid var(--ring);border-radius:10px;margin-top:6px"></label><br><br>
-          <label>E-mail<br><input required type="email" name="email" style="width:100%;padding:10px;border:1px solid var(--ring);border-radius:10px;margin-top:6px"></label><br><br>
-          <label>Mensagem<br><textarea required name="message" rows="5" style="width:100%;padding:10px;border:1px solid var(--ring);border-radius:10px;margin-top:6px"></textarea></label><br><br>
-          <button class="btn" type="submit">Enviar</button>
-          <p class="muted" style="margin-top:8px">*Este formulário usa Formspree. Você pode substituir pela solução preferida.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <div>© <span id="y"></span> Metacraft — squads sob demanda, prontas para performar.</div>
-      <div><a href="#manifesto">Manifesto</a> · <a href="#servicos">Serviços</a> · <a href="#contato">Contato</a></div>
-    </div>
-  </footer>
-
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-</body>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
