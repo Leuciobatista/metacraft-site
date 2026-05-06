@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FuelVerify AI | A verdade do combustível na palma da sua mão</title>
+  <meta name="description" content="FuelVerify AI é um dispositivo portátil conectado ao app que analisa a qualidade do combustível em segundos e gera dados inteligentes para consumidores e mercado." />
+  <style>
+    :root {
+      --bg: #061016;
+      --bg2: #0b1820;
+      --green: #64d63b;
+      --green2: #31a82c;
+      --text: #f5f7f6;
+      --muted: #b5c0bc;
+      --card: rgba(255,255,255,.055);
+      --border: rgba(100,214,59,.32);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 65% 10%, rgba(100,214,59,.12), transparent 28%),
+        radial-gradient(circle at 20% 30%, rgba(51,168,44,.10), transparent 35%),
+        linear-gradient(135deg, #03090d, var(--bg) 55%, #020607);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+
+    header {
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(14px);
+      background: rgba(3,9,13,.72);
+      z-index: 5;
+    }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .logo { font-size: 30px; font-weight: 900; letter-spacing: -1px; }
+    .logo span { color: var(--green); }
+    .nav small { color: var(--muted); display:block; margin-top:-4px; letter-spacing:2px; }
+    .btn {
+      display: inline-flex; align-items:center; justify-content:center;
+      padding: 13px 20px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      color: #041006; font-weight: 800;
+      box-shadow: 0 0 30px rgba(100,214,59,.25);
+      border: 0;
+    }
+
+    .hero { padding: 70px 0 46px; }
+    .hero-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap: 42px; align-items:center; }
+    .badge { color: var(--green); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; }
+    h1 { font-size: clamp(42px, 6vw, 78px); line-height: .95; margin: 14px 0 22px; letter-spacing:-3px; }
+    h1 span { color: var(--green); display:block; }
+    .lead { font-size: 21px; color: #dfe7e3; max-width: 620px; }
+    .hero-actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
+    .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); box-shadow:none; }
+
+    .folder-card {
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: rgba(255,255,255,.04);
+      padding: 14px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.42);
+      transform: rotate(.5deg);
+    }
+    .folder-card img { width:100%; display:block; border-radius: 20px; }
+
+    .features { display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 34px 0; }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 22px;
+      padding: 22px;
+      min-height: 156px;
+    }
+    .icon { font-size: 34px; color: var(--green); margin-bottom: 10px; }
+    .card h3 { margin: 0 0 8px; color: var(--green); font-size: 18px; text-transform: uppercase; }
+    .card p { margin: 0; color: var(--muted); }
+
+    section { padding: 42px 0; }
+    .section-title { font-size: clamp(30px, 4vw, 48px); margin: 0 0 18px; letter-spacing:-1.5px; }
+    .section-title span { color: var(--green); }
+    .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items:stretch; }
+    .list { display:grid; gap: 14px; }
+    .step { display:flex; gap: 16px; align-items:flex-start; padding: 18px; border: 1px solid rgba(255,255,255,.1); border-radius: 18px; background: rgba(255,255,255,.04); }
+    .num { width: 34px; height: 34px; border-radius:50%; background: var(--green); color:#041006; display:flex; align-items:center; justify-content:center; font-weight:900; flex:0 0 34px; }
+    .step h3 { margin:0 0 4px; color:var(--green); }
+    .step p { margin:0; color:var(--muted); }
+
+    .specs table { width:100%; border-collapse:collapse; color:var(--muted); }
+    .specs td { padding: 12px 6px; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .specs td:last-child { color:var(--text); text-align:right; font-weight:700; }
+
+    .cta {
+      text-align:center;
+      padding: 60px 24px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(100,214,59,.12), rgba(255,255,255,.035));
+      margin-bottom: 56px;
+    }
+    .cta p { color:var(--muted); font-size:20px; max-width:760px; margin: 0 auto 26px; }
+
+    footer { padding: 28px 0 44px; color: var(--muted); border-top:1px solid rgba(255,255,255,.08); }
+    footer strong { color:var(--text); }
+
+    @media (max-width: 900px) {
+      .hero-grid, .two-col { grid-template-columns: 1fr; }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .folder-card { transform:none; }
+    }
+    @media (max-width: 560px) {
+      .features { grid-template-columns: 1fr; }
+      .nav { align-items:flex-start; }
+      .nav .btn { display:none; }
+      h1 { letter-spacing:-2px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div>
+        <div class="logo">FUELVERIFY <span>AI</span></div>
+        <small>POR METACRAFT</small>
+      </div>
+      <a class="btn" href="#contato">Quero conhecer</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Inteligência que gera confiança</div>
+          <h1>A verdade do combustível <span>na palma da sua mão.</span></h1>
+          <p class="lead">FuelVerify AI é um dispositivo portátil conectado a um aplicativo que analisa a qualidade do combustível em segundos, identifica indícios de adulteração e transforma cada análise em dados inteligentes para consumidores e mercado.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contato">Entrar na lista de interesse</a>
+            <a class="btn btn-secondary" href="#como-funciona">Ver como funciona</a>
+          </div>
+        </div>
+        <div class="folder-card">
+          <img src="assets/folder-fuelverify.png" alt="Folder promocional FuelVerify AI com dispositivo, app e especificações técnicas" />
+        </div>
+      </div>
+    </section>
+
+    <section class="container features" aria-label="Benefícios principais">
+      <article class="card"><div class="icon">⚡</div><h3>Análise em segundos</h3><p>Resultados rápidos e objetivos para ajudar o consumidor a decidir na hora.</p></article>
+      <article class="card"><div class="icon">🛡️</div><h3>Detecta fraudes</h3><p>Ajuda a identificar irregularidades e possíveis adulterações no combustível.</p></article>
+      <article class="card"><div class="icon">📊</div><h3>Dados inteligentes</h3><p>Milhares de análises podem gerar insights sobre qualidade, preço e regiões.</p></article>
+      <article class="card"><div class="icon">📱</div><h3>App completo</h3><p>Histórico, mapas, alertas, relatórios e acompanhamento em tempo real.</p></article>
+    </section>
+
+    <section id="como-funciona">
+      <div class="container two-col">
+        <div class="card">
+          <h2 class="section-title">Como <span>funciona</span></h2>
+          <div class="list">
+            <div class="step"><div class="num">1</div><div><h3>Coloque o pote</h3><p>Insira o pote descartável com combustível na câmara do dispositivo.</p></div></div>
+            <div class="step"><div class="num">2</div><div><h3>Ligue o dispositivo</h3><p>O FuelVerify AI se conecta ao app via Bluetooth.</p></div></div>
+            <div class="step"><div class="num">3</div><div><h3>Aguarde a análise</h3><p>Os sensores fazem a leitura do combustível em poucos segundos.</p></div></div>
+            <div class="step"><div class="num">4</div><div><h3>Veja o resultado</h3><p>O app apresenta qualidade, alertas e detalhes da análise.</p></div></div>
+          </div>
+        </div>
+
+        <div class="card specs">
+          <h2 class="section-title">Especificações <span>técnicas</span></h2>
+          <table>
+            <tr><td>Altura total</td><td>195 mm</td></tr>
+            <tr><td>Diâmetro máximo</td><td>104 mm</td></tr>
+            <tr><td>Diâmetro da base</td><td>85 mm</td></tr>
+            <tr><td>Conectividade</td><td>Bluetooth</td></tr>
+            <tr><td>Alimentação</td><td>4 pilhas AA</td></tr>
+            <tr><td>Tempo de uso</td><td>Até 8 horas</td></tr>
+            <tr><td>Capacidade do pote</td><td>500 ml</td></tr>
+            <tr><td>Material</td><td>ABS / PETG</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container two-col">
+        <div class="card"><h2 class="section-title">Mais <span>segurança</span></h2><p>Proteja seu veículo, sua família e seu bolso com uma análise simples antes de seguir com o abastecimento.</p></div>
+        <div class="card"><h2 class="section-title">Mais <span>transparência</span></h2><p>A rede de dados do FuelVerify AI pode ajudar consumidores, empresas e órgãos interessados a entender melhor a qualidade do combustível no país.</p></div>
+      </div>
+    </section>
+
+    <section id="contato" class="container">
+      <div class="cta">
+        <h2 class="section-title">Quer acompanhar o lançamento?</h2>
+        <p>Entre na lista de interesse para receber novidades sobre o protótipo, testes, pré-venda e oportunidades de parceria.</p>
+        <a class="btn" href="mailto:contato@metacraftbr.com?subject=Interesse%20no%20FuelVerify%20AI">Falar com a Metacraft</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>METACRAFT</strong> — Tecnologia que gera confiança. © 2026
+    </div>
+  </footer>
+</body>
+</html>
